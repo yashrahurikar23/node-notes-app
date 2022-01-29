@@ -12,10 +12,13 @@
     "winston": "^3.5.0"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "server": "nodemon server/server.js",
+    "start": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "repository": {
     "type": "git",
