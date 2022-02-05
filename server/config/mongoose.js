@@ -6,7 +6,10 @@ mongoose.Promise = Promise;
 exports.connect = () => {
   mongoose.connect(mongo.uri, {
     keepAlive: 1,
-    userNewUrlParser: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   });
-  return mongoose.connection;
+  return {
+    connection: mongoose.connection
+  };
 }

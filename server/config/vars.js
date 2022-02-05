@@ -9,5 +9,6 @@ module.exports = {
   port: process.env.PORT,
   mongo: {
     uri: process.env.MONGO_URI
-  }
+  },
+  token_key: process.env.TOKEN_KEY
 }
