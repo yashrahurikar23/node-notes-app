@@ -1,7 +1,7 @@
 const express = require('express');
 const AuthController = require('../../controllers/auth.controller');
 const logger = require('../../../config/logger');
-
+const authenticateJWTToken = require('../../../middlewares/auth');
 const router = express.Router();
 
 
@@ -36,29 +36,29 @@ router.post('/register', async (req, res) => {
 
 
 // Users routes
-router.post('/users', async (req, res) => {
+router.post('/users', authenticateJWTToken, async (req, res) => {
 
 });
 
-router.post('/user', async (req, res) => {
+router.post('/user', authenticateJWTToken, async (req, res) => {
 
 });
 
 // Notes Routes
-router.post('/notes', async (req, res) => {
+router.post('/notes', authenticateJWTToken, async (req, res) => {
 
 });
 
-router.put('/notes', async (req, res) => {
+router.put('/notes', authenticateJWTToken, async (req, res) => {
 
 });
 
-router.get('/notes/:note_id', async (req, res) => {
+router.get('/notes/:note_id', authenticateJWTToken, async (req, res) => {
 
 });
 
 
-router.get('/users', async (req, res) => {
+router.get('/users', authenticateJWTToken, async (req, res) => {
 
 });
 
